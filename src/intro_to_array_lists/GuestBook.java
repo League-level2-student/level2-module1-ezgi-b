@@ -2,9 +2,11 @@ package intro_to_array_lists;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
 public class GuestBook implements ActionListener {
@@ -22,11 +24,19 @@ public class GuestBook implements ActionListener {
 		bookie.CreateUI();
 	}
 	
+	ArrayList<String> GuestBook = new ArrayList<String>();
+	JButton plusName;
+	JButton iSpyNames;
 	void CreateUI() {
+		GuestBook.add("Bruce Banner");
+		GuestBook.add("Severus Snape");
+		GuestBook.add("Gregory Goyle");
+		GuestBook.add("Donald Davenport");
+		
 		JFrame frame = new JFrame();
 		JPanel panel = new JPanel();
-		JButton plusName = new JButton("Add Name");
-		JButton iSpyNames = new JButton("View Names");
+		plusName = new JButton("Add Name");
+		iSpyNames = new JButton("View Names");
 		
 		frame.setVisible(true);
 		frame.setDefaultCloseOperation(3);
@@ -45,6 +55,16 @@ public class GuestBook implements ActionListener {
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		// TODO Auto-generated method stub
+		if(e.getSource().equals(iSpyNames)) {
+			String s = "Guest Book: " + "\n";
+			for(int i = 0; i < GuestBook.size(); i++) {
+				s = s + "Guest #" + (i+1) + ": " + GuestBook.get(i) + "\n";
+			}
+			JOptionPane.showMessageDialog(null, s);
+		}
+		if(e.getSource().equals(plusName)) {
+			GuestBook.add(JOptionPane.showInputDialog("What name would you like to add to the Guest Book?"));
+		}
 		
 	}
 

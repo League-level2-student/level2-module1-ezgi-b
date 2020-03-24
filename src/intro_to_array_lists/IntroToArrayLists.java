@@ -1,7 +1,58 @@
 package intro_to_array_lists;
 
+import java.util.ArrayList;
+import java.util.Random;
+
 public class IntroToArrayLists {
 	public static void main(String[] args) {
+		ArrayList<String> listlistlist = new ArrayList<String>();
+		Random r = new Random();
+		
+		for(int i = 0; i<10; i++) {
+			String s = "";
+			for(int j = 0; j<(r.nextInt(5)+2); j++) {
+				s = s + (char)(r.nextInt(26) + 'a');
+				if(j%(r.nextInt(4)+1)==0) {
+					s = s + "a";
+				}
+			}
+			listlistlist.add(s);
+		}
+		
+		for(int i = 0; i<listlistlist.size(); i++) {
+			System.out.println(listlistlist.get(i));
+		}
+		
+		System.out.println("");
+		
+		for(String bob: listlistlist) {
+			System.out.println(bob);
+		}
+		
+		System.out.println("");
+		
+		for(int i = 0; i<listlistlist.size(); i++) {
+			if(i%2==0) {
+			System.out.println(listlistlist.get(i));
+			}
+		}
+		
+		System.out.println("");
+		
+		for(int i = listlistlist.size(); i>0; i--) {
+			System.out.println(listlistlist.get(i-1));
+		}
+		
+		System.out.println("");
+		
+		boolean e = false;
+		for(int i = 0; i<listlistlist.size(); i++) {
+			e = false;
+			for(int j = 0; j<listlistlist.size(); j++) {
+				
+			}
+				listlistlist.get(i).charAt(i);
+		}
 		//1. Create an array list of Strings
 		//   Don't forget to import the ArrayList class
 		
