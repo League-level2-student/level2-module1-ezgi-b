@@ -19,17 +19,22 @@ public class IntroToArrayLists {
 			listlistlist.add(s);
 		}
 		
+		
+		System.out.println("Words printed with for-loop:");
+		
 		for(int i = 0; i<listlistlist.size(); i++) {
 			System.out.println(listlistlist.get(i));
 		}
 		
 		System.out.println("");
+		System.out.println("Words printed with for-each loop:");
 		
 		for(String bob: listlistlist) {
 			System.out.println(bob);
 		}
 		
 		System.out.println("");
+		System.out.println("Words in list that are even numbered elements:");
 		
 		for(int i = 0; i<listlistlist.size(); i++) {
 			if(i%2==0) {
@@ -38,20 +43,30 @@ public class IntroToArrayLists {
 		}
 		
 		System.out.println("");
+		System.out.println("Words in reverse order:");
+		
 		
 		for(int i = listlistlist.size(); i>0; i--) {
 			System.out.println(listlistlist.get(i-1));
 		}
 		
 		System.out.println("");
+		System.out.println("Words which contain the letter e:");
 		
 		boolean e = false;
 		for(int i = 0; i<listlistlist.size(); i++) {
 			e = false;
-			for(int j = 0; j<listlistlist.size(); j++) {
+			for(int j = 0; j<listlistlist.get(i).length(); j++) {
+				
+				if(listlistlist.get(i).charAt(j)=='e') {
+					e = true;
+				}
 				
 			}
-				listlistlist.get(i).charAt(i);
+			if(e==true) {
+				System.out.println(listlistlist.get(i));
+			}
+				
 		}
 		//1. Create an array list of Strings
 		//   Don't forget to import the ArrayList class
